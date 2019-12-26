@@ -1,25 +1,30 @@
 import javax.swing.*;
-
-public class Snake extends JFrame{
-
-    private final int B_WIDTH = 300;
-    private final int B_HEIGHT = 300;
-    private final int DOT_SIZE = 300;
-    private final int ALL_DOTS = 900;
-    private final int RAND_POS = 29;
-    private final int DELAY = 140;
+import java.awt.*;
 
 
-    private final int x[] = new int[ALL_DOTS];
-    private final int y[] = new int[ALL_DOTS];
+public class Snake extends JFrame {
 
-    private void loadImages(){
+    public Snake() {
 
-        ImageIcon idd = new ImageIcon("dot.png");
-        ball.
+        add(new Board());
+
+        setResizable(false);
+        pack();
+
+        setTitle("Snake");
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
 
+    public static void main(String[] args) {
 
-
+        EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                JFrame ex = new Snake();
+                ex.setVisible(true);
+            }
+        });
+    }
 }
